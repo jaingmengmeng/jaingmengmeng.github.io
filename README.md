@@ -17,6 +17,7 @@
 ## Run
 
 ```bash
+$ hexo new ***
 $ hexo clean
 $ hexo generate / hexo g
 $ hexo serve 	/ hexo s
