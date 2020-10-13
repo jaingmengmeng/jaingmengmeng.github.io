@@ -115,20 +115,21 @@
 
 
 
-  <meta name="description" content="弱小和无知，不是生存的障碍，傲慢才是。    第一次听说《三体》这本书，是在高中时候的一本科技杂志上看到的，中国科幻银河奖特别奖对于我来说似乎并没有多大的吸引力，因为我不了解这个奖项在中国科幻小说中的地位，也不是很了解作者刘慈欣在中国科幻小说界的重要地位。但我却被《三体》的封面给深深吸引了，中央一颗放光的球体，一个背着包，扎着双辫的女孩。但我也并没有立马产生想去看这本书的冲动，我觉得看一本新书需">
-<meta name="keywords" content="三体,读书报告">
+  <meta name="description" content="一、倒排索引  1、应用场景   在搜索引擎中每个文件都对应一个文件ID，文件内容被表示为一系列关键词的集合。例如“文档1”经过分词，提取了20个关键词，每个关键词都会记录它在文档中的出现次数和出现位置。存在一种正向索引，给出文件ID，就能根据索引找到该文件下的所有关键字，出现的次数和位置。但是对于搜索引擎来说，做的更多的工作是用户给出一个关键字，然后返回包含该关键字的所有文件。因此就有了倒排索">
+<meta name="keywords" content="Hadoop,分布式,倒排索引">
 <meta property="og:type" content="article">
-<meta property="og:title" content="三体">
-<meta property="og:url" content="http://www.jiangliuyang.top/2018/10/24/三体/index.html">
+<meta property="og:title" content="Map-Reduce Inverted Index">
+<meta property="og:url" content="http://www.jiangliuyang.top/2020/10/12/Map-Reduce-Inverted-Index/index.html">
 <meta property="og:site_name" content="江流洋">
-<meta property="og:description" content="弱小和无知，不是生存的障碍，傲慢才是。    第一次听说《三体》这本书，是在高中时候的一本科技杂志上看到的，中国科幻银河奖特别奖对于我来说似乎并没有多大的吸引力，因为我不了解这个奖项在中国科幻小说中的地位，也不是很了解作者刘慈欣在中国科幻小说界的重要地位。但我却被《三体》的封面给深深吸引了，中央一颗放光的球体，一个背着包，扎着双辫的女孩。但我也并没有立马产生想去看这本书的冲动，我觉得看一本新书需">
+<meta property="og:description" content="一、倒排索引  1、应用场景   在搜索引擎中每个文件都对应一个文件ID，文件内容被表示为一系列关键词的集合。例如“文档1”经过分词，提取了20个关键词，每个关键词都会记录它在文档中的出现次数和出现位置。存在一种正向索引，给出文件ID，就能根据索引找到该文件下的所有关键字，出现的次数和位置。但是对于搜索引擎来说，做的更多的工作是用户给出一个关键字，然后返回包含该关键字的所有文件。因此就有了倒排索">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.jiangliuyang.top/2018/10/24/三体/%E4%B8%89%E4%BD%93%E5%B0%81%E9%9D%A2.jpg">
-<meta property="og:updated_time" content="2019-09-11T15:23:57.481Z">
+<meta property="og:image" content="http://www.jiangliuyang.top/2020/10/12/Map-Reduce-Inverted-Index/%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95.png">
+<meta property="og:image" content="http://www.jiangliuyang.top/2020/10/12/Map-Reduce-Inverted-Index/output.png">
+<meta property="og:updated_time" content="2020-10-13T08:05:33.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="三体">
-<meta name="twitter:description" content="弱小和无知，不是生存的障碍，傲慢才是。    第一次听说《三体》这本书，是在高中时候的一本科技杂志上看到的，中国科幻银河奖特别奖对于我来说似乎并没有多大的吸引力，因为我不了解这个奖项在中国科幻小说中的地位，也不是很了解作者刘慈欣在中国科幻小说界的重要地位。但我却被《三体》的封面给深深吸引了，中央一颗放光的球体，一个背着包，扎着双辫的女孩。但我也并没有立马产生想去看这本书的冲动，我觉得看一本新书需">
-<meta name="twitter:image" content="http://www.jiangliuyang.top/2018/10/24/三体/%E4%B8%89%E4%BD%93%E5%B0%81%E9%9D%A2.jpg">
+<meta name="twitter:title" content="Map-Reduce Inverted Index">
+<meta name="twitter:description" content="一、倒排索引  1、应用场景   在搜索引擎中每个文件都对应一个文件ID，文件内容被表示为一系列关键词的集合。例如“文档1”经过分词，提取了20个关键词，每个关键词都会记录它在文档中的出现次数和出现位置。存在一种正向索引，给出文件ID，就能根据索引找到该文件下的所有关键字，出现的次数和位置。但是对于搜索引擎来说，做的更多的工作是用户给出一个关键字，然后返回包含该关键字的所有文件。因此就有了倒排索">
+<meta name="twitter:image" content="http://www.jiangliuyang.top/2020/10/12/Map-Reduce-Inverted-Index/%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95.png">
 
 
 
@@ -137,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://www.jiangliuyang.top/2018/10/24/三体/">
+  <link rel="canonical" href="http://www.jiangliuyang.top/2020/10/12/Map-Reduce-Inverted-Index/">
 
 
 
@@ -147,7 +148,7 @@
   };
 </script>
 
-  <title>三体 | 江流洋</title>
+  <title>Map-Reduce Inverted Index | 江流洋</title>
   
 
 
@@ -400,7 +401,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.jiangliuyang.top/2018/10/24/三体/">
+    <link itemprop="mainEntityOfPage" href="http://www.jiangliuyang.top/2020/10/12/Map-Reduce-Inverted-Index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="江流洋">
@@ -417,7 +418,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">三体
+          <h1 class="post-title" itemprop="name headline">Map-Reduce Inverted Index
               
             
           </h1>
@@ -442,7 +443,7 @@
                 
               
 
-              <time title="创建时间：2018-10-24 12:51:00" itemprop="dateCreated datePublished" datetime="2018-10-24T12:51:00+08:00">2018-10-24</time>
+              <time title="创建时间：2020-10-12 18:50:33" itemprop="dateCreated datePublished" datetime="2020-10-12T18:50:33+08:00">2020-10-12</time>
             
 
             
@@ -459,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-11 23:23:57" itemprop="dateModified" datetime="2019-09-11T23:23:57+08:00">2019-09-11</time>
+                <time title="修改时间：2020-10-13 16:05:33" itemprop="dateModified" datetime="2020-10-13T16:05:33+08:00">2020-10-13</time>
               
             
           </span>
@@ -476,7 +477,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span>
 
                 
                 
@@ -511,7 +512,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.7k</span>
+                <span title="本文字数">16k</span>
               
 
               
@@ -525,7 +526,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">14 分钟</span>
               
             </div>
           
@@ -545,18 +546,35 @@
       
 
       
-        <blockquote>
-<p>弱小和无知，不是生存的障碍，傲慢才是。</p>
-</blockquote>
-<p>  第一次听说《三体》这本书，是在高中时候的一本科技杂志上看到的，中国科幻银河奖特别奖对于我来说似乎并没有多大的吸引力，因为我不了解这个奖项在中国科幻小说中的地位，也不是很了解作者刘慈欣在中国科幻小说界的重要地位。但我却被《三体》的封面给深深吸引了，中央一颗放光的球体，一个背着包，扎着双辫的女孩。但我也并没有立马产生想去看这本书的冲动，我觉得看一本新书需要做好准备，特别是一本好书，一本值得细细品味的书。</p>
+        <h3 id="一-倒排索引"><a class="markdownIt-Anchor" href="#一-倒排索引"></a> 一、倒排索引</h3>
+<h4 id="1-应用场景"><a class="markdownIt-Anchor" href="#1-应用场景"></a> 1、应用场景</h4>
+<p>  在<strong>搜索引擎</strong>中每个文件都对应一个文件ID，文件内容被表示为一系列关键词的集合。例如“文档1”经过分词，提取了20个关键词，每个关键词都会记录它在文档中的出现次数和出现位置。存在一种<strong>正向索引</strong>，给出文件ID，就能根据索引找到该文件下的所有关键字，出现的次数和位置。但是对于<strong>搜索引擎</strong>来说，做的更多的工作是用户给出一个关键字，然后返回包含该关键字的所有文件。因此就有了<strong>倒排索引</strong>，每个关键词都对应着一系列的文件，这些文件中都出现这个关键词，这样就能通过给出关键字来查找包含该关键字的所有文件，以及关键字在文件中的出现次数和位置。</p>
 <a id="more"></a>
-<p><img src="/2018/10/24/三体/%E4%B8%89%E4%BD%93%E5%B0%81%E9%9D%A2.jpg" alt="三体封面"></p>
-<p>  所以，我是今年的暑假开始着手看《三体》的，那个时候刚买 kindle，正是看书欲望特别强烈的时候，也觉得做好了看这本书的准备了（至少是在假期，手头上并没有很多烦心的事情），于是就在亚马逊平台买了《三体》全集的电子书，每日都陪着同学去图书馆看《三体》。那个时候并没有想到这个学期的星际旅行课上老师会向我们隆重的介绍《三体》这本书，所以看的时候并没有带着完成写读书报告的任务去看，所以看的也很随心，也很尽兴。</p>
-<p>  《三体·地球往事》以文革作为背景，那个时候冷战美苏争霸，除核弹、洲际导弹外，还在一个隐秘的领域展开竞争…那就是寻找外星文明，取得战略主动。选择这个时期作为故事的背景，合情合理，同时文革也是鲜有历史记载的时候，作者会有比较好的发挥空间。《三体·地球往事》一上来就用物理学家杨冬的自杀来吸引读者的眼球，接着以主人公汪淼的视角开始引入本书的第二个主角——叶文洁，同时慢慢的打开了三体世界的大门。汪淼为了调查科学家自杀的真相去拜访了叶文洁，也接触到了一款名叫《三体》的游戏，知道了三体世界的存在。也因为解开了三体的谜团，汪淼有机会参加了地球———组织的一次线下的三体游戏聚会，后来又参加了一次三体组织会议。作为组织领袖的叶文洁回忆起自己在文革时期屡次遭到的迫害：父亲被批斗，自己也因为给别人代笔文章而锒铛入狱。但因为叶文洁极强的专业知识，她被分配到红岸基地工作，忍隐多年才得知红岸的真正作用，天才的她发现了太阳对电波的增幅作用…于是某个星夜，她偷偷以太阳为中转站，向恒星分布最密集的半人马座方向发出了经太阳增强后的呼唤信号！八年后，叶文洁收到了来自半人马座方向阿尔法三星（三体星）的回复。由于对人类世界的失望，叶文洁在回复中邀请三体人“到地球洗涤人类的罪恶”，成功帮助三体星人在浩瀚宇宙中定位了地球。叶文洁为了不让自己的行为败露，杀死了自己的丈夫和上司。后来，叶文洁认识了与自己想法相同的富翁伊文斯，伊文斯建立了第二个红岸基地用来接收三体文明发来的信息，并与叶文洁一起组建了地球三体组织，目的是帮助三体人入侵地球。三体组织大概可以分为三大派系，降临派、拯救派和幸存派，降临派对人类已经绝望，希望人类遭到鲜血的洗礼而灭亡；拯救派对人类失望透顶，希望三体文明来拯救人类；幸存派是后来才出现的，他们希望自己的子孙后代能够在这场终极战斗之中幸存下来。三体星人为了让自己的入侵地球计划不受到阻碍，决定向地球发射了两个超级计算机智子，用来阻碍地球的科学技术的发展。后来史强采取了古筝计划，成功获取了三体组织的三体文明信息。被三体星人称为虫子的汪淼对人类的未来一度感到很绝望，但是后来的他认识到虫子虽渺小但不会被轻易消灭，决定奋起反抗。</p>
-<p>  《三体II·黑暗森林》的故事情节建立在宇宙社会学的公理之上。第一，生存是文明的第一需要；第二，文明不断增长和扩张，但宇宙中的物质总量保持不变。人们发现，三体人的交流不需要语言，他们的大脑思维可以直接通过脑电波进行互相交流。三体人的思维对外界是完全暴露的，不能隐藏。他们想到什么，就会传达出什么信息。在三体人的思维世界中，不存在计谋和伪装。他们和别人交流时，所交流的一切都是真实的，不能欺骗，不能撒谎。发现了三体人的这种思维特点后，人类选出了四位面壁者，给他们赋予绝对的权力。他们可以调动任何想调动的资源，做任何想做的事，他们也完全不必向任何人解释他们这样做的原因和目的。这样，三体人派来的智子也就无法了解四位面壁者到底想的是什么，他们到底会用什么样的战略来对抗三体人的侵略。第一位面壁者试图建立一支强大而意志坚定的地球太空军。但他的真实想法不是让太空军去对抗三体的侵略者，而是用宏原子聚变的极高能量，毁灭地球太空舰队。这样，这只舰队就变成了宏观量子态的幽灵舰队。这些已经死去的幽灵不可能再死第二次，这样就可以让这支幽灵部队去对抗三体侵略者。可是他的战略被三体人识破了。第二位面壁者试图用能量巨大的氢弹改变水星轨道，使水星掉入太阳，从而引起太阳内部物质的喷发。这些喷发物质最终会将金星、地球和火星也拉入太阳，进一步毁灭整个太阳系。这样的做法当然会让三体人失去侵略的目标，但他付出的是整个太阳系的代价，而且人类也会同时灭亡。这个策略也被三体人识破了。第三位面壁者表面看，是给人们的大脑中植入坚强不屈的思维钢印，但实际上他是一位失败主义者，他压根儿就不相信人类能够战胜三体。当三体人派出的前哨，一个水滴状的小型航天器到达太阳系时，人类已经建造了一千艘巨大的恒星级战舰。这一千艘太空舰队浩浩荡荡的向三体人的水滴展示自己强大的力量，结果，水滴仅仅凭借自己异常坚硬的外壳，使用撞击的原始方法，就完全毁灭了地球人类的庞大舰队！少数逃出的几艘战舰之间又发生了内斗，最终只有两艘战舰逃亡到太空深处，保留了一点人类的生命火种。就在人类世界陷入极度绝望的时候，第四位名叫罗辑面壁者，发现了宇宙社会的丛林规则，也就是黑暗森林规则。如同在一个黑暗的森林里，有很多持枪的猎人在行走。如果有人暴露他的位置，其他猎人最佳的策略不是去探查，而是顺手一枪打过去，管他是什么东西，先消灭了再说。所以，保护好自己星系的坐标位置，是避免黑暗森林打击的主要策略。罗辑在太阳系外围布置了很多核弹，人们都以为他是要用核弹来防御三体侵略者。等他布置完所有的核弹之后，才和三体人交流。他告诉三体人，这些核弹爆炸后，将会在宇宙中展示出三体星系和太阳系的坐标位置图。罗辑的威慑马上起到了作用。三体人立刻同意放弃对地球的侵略，同时还答应在科技上帮助地球人快速进步。第四位面壁者罗辑终于拯救了太阳系。</p>
-<p>  《三体》的故事情节环环相扣，让人不得不佩服大刘的写作手法的高超。每一处的情节都不是孤立的一段故事，而是为了故事情节的发展做铺垫，整本书读下来，感觉就像是在跟着作者破一件弥天大案，一层层揭开迷雾找到真相，非常享受。写叶文洁的悲惨遭遇让她产生了对人类的厌恶和失望，于是才有了后面的拯救派希望三体文明来拯救罪恶的人类；写伊文斯种的树遭到了村民们的乱砍滥伐，为后来伊文斯引领降临派希望三体文明来彻底毁灭人类埋下伏笔。一本好的科幻作品肯定少不了一些规则的设定，我们可以称之为科学幻想，比如阿西莫夫的机器人三定律，这些规则的存在是为了让故事情节得以继续发展下去，毕竟这些科学幻想并不是真实存在于现实世界的，前提是这些科学幻想也必须合情合理才能得到广大读者的认可。同样，《三体》中也有这样的设定，那就是在《三体II·黑暗森林》中宇宙社会学的两大公理，第一条是“生存是文明的第一需要”；第二条是“文明不断增长和扩张，但宇宙中的物质总量保持不变”。科幻的“科”，是指科学，并一定是指科技。《三体II·黑暗森林》整本书在贯彻的科学是社会学，而且主人公罗辑打败三体星人依靠的也不是物理学，不是计算机科学，而是宇宙社会学。这也是我首次在科幻小说中看到了社会学对于人类生存的重大影响，在公众对社会学认识度还不算很高的当今中国，一部“硬科幻代表作”能把社会学提到这样的高度，着实能让人感到意外。记得课堂上张威老师说过，科幻小说不能单纯的讲科学技术的高超，更应该思考科学技术的发展对人类的生存和发展带来的影响。计算机科学技术与物理学对我们的生活和生产带来了翻天覆地的变化，而社会科学的专业知识关乎却是全人类的生存与发展。同时在《三体I·地球往事》中，描写叶文洁的父亲遭受文革的迫害，后来又因为帮沙瑞山代笔而被关押，又见识到了自然环境一步步的遭到人类的破坏，由此叶文洁产生了对人类社会的厌恶，对人类绝望的她决定让三体文明来拯救人类。社会与人性黑暗的一面终将会把一个原本善良的人变得自私，变得愤世嫉俗。书中所蕴含的社会学，哲学和宗教的相关知识，此处可见大刘丰富的知识面和良苦用心。书中大刘就像一个预言家，以人类几百万年的历史为假设前提，逐步推演出人类文明在遭受异类文明攻击后的命运。每一次危机背后，都闪耀着人性的光辉，我能够毫不夸张的说，《三体》不仅仅仅是一部科幻史诗巨作，更是一部对人性充满思考的社科著作。</p>
-<p>  《三体》为什么在中国科幻小说中占据了这么重要的位置。</p>
-<p>  再比较刘慈欣的其他作品，《球状闪电》。</p>
+<h4 id="2-基本原理"><a class="markdownIt-Anchor" href="#2-基本原理"></a> 2、基本原理</h4>
+<p>  <strong>倒排索引</strong>主要由两部分组成，单词词典和倒排文件。其中，单词词典是保存在计算机内存中的，是由文档集合中出现过的所有单词构成的字符串集合，单词词典内每条索引项记载单词本身的一些信息以及指向“倒排列表”的指针。而倒排列表记载了出现过某个单词的所有文档的文档列表及单词在该文档中出现的位置信息，每条记录称为一个倒排项(Posting)。倒排文件，所有单词的倒排列表往往顺序地存储在磁盘的某个文件里，这个文件即被称之为倒排文件，倒排文件是存储倒排索引的物理文件。所以，在搜索引擎的应用场景下，整个倒排索引的过程是，用户给出搜索的关键词；然后搜索引擎在内存中的单词词典中找到该关键词（这里是应用哈希表映射或者B树、B+树高效的查找结构），得到指向该关键词倒排列表的指针；而后根据指针在磁盘中的倒排文件中找到该关键词的倒排列表，里面记载了包含该关键词的所有文件的ID以及在文件中出现的次数和位置信息；最后根据文件ID得到文件全部内容并渲染给用户。</p>
+<p><img src="/2020/10/12/Map-Reduce-Inverted-Index/%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95.png" alt="倒排索引"></p>
+<h3 id="二-实验"><a class="markdownIt-Anchor" href="#二-实验"></a> 二、实验</h3>
+<h4 id="1-实验环境"><a class="markdownIt-Anchor" href="#1-实验环境"></a> 1、实验环境</h4>
+<ul>
+<li>Windows10家庭版，16GB + 512GB</li>
+<li>VMware Workstation Pro 15.0.1</li>
+<li>CentOS-7-x86_64-Everything-2003</li>
+<li>Hadoop-2.7.3</li>
+<li>jdk-8u144-linux-x64</li>
+</ul>
+<h4 id="2-实验步骤"><a class="markdownIt-Anchor" href="#2-实验步骤"></a> 2、实验步骤</h4>
+<p><a href="https://github.com/imehrdadmahdavi/map-reduce-inverted-index" target="_blank" rel="noopener">map-reduce-inverted-index</a></p>
+<p>  在前面，我们已经配置好了 <code>hadoop</code> 环境，包括 <code>hd-master</code>，<code>hd-slave1</code>，<code>hd-slave2</code>，在三台机器上都配置了 <code>Yum</code> 和 <code>samba</code>，并且三台机器之间可以互相无密码登录。至此我们就获得了一个可以运行 <code>map-reduce</code> 程序的环境了。</p>
+<p>  用 <code>putty</code> 通过 <code>ssh</code> 登录 <code>hd-master</code>，并依次运行下面的命令，包括下载 <code>github</code>仓库，生成测试文件，编译并打包java程序，删除log文件，运行 <code>Hadoop</code>，复制测试文件到 <code>hdfs</code>，运行倒排索引程序并检查运行结果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载 github 仓库</span></span><br><span class="line">$ <span class="built_in">cd</span> /opt/linuxsir/</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/imehrdadmahdavi/map-reduce-inverted-index map-reduce-inverted-index</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除项目中原来的文件file01和file02，并重新生成，保证文件无误，主要是保证制表符及换行符无误。</span></span><br><span class="line">$ <span class="built_in">cd</span> /opt/linuxsir/map-reduce-inverted-index/</span><br><span class="line">$ rm -rf input/file01</span><br><span class="line">$ touch input/file01</span><br><span class="line">$ rm -rf input/file02</span><br><span class="line">$ touch input/file02</span><br><span class="line">$ <span class="built_in">echo</span> -e <span class="string">"5722018411\tHello World Bye World"</span> &gt;&gt; input/file01</span><br><span class="line">$ <span class="built_in">echo</span> -e <span class="string">"6722018415\tHello Hadoop Goodbye Hadoop"</span> &gt;&gt; input/file02</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译java文件，InvertedIndex.java将打包生成invertedindex.jar。</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"export HADOOP_CLASSPATH=\$JAVA_HOME/lib/tools.jar"</span> &gt;&gt; /root/.bashrc</span><br><span class="line">$ <span class="built_in">source</span> /root/.bashrc</span><br><span class="line">$ <span class="built_in">cd</span> /opt/linuxsir/map-reduce-inverted-index</span><br><span class="line">$ hadoop com.sun.tools.javac.Main InvertedIndex.java</span><br><span class="line">$ jar cf invertedindex.jar InvertedIndex*.class</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除三台机器上Hadoop的log文件。</span></span><br><span class="line">$ rm -rf /opt/linuxsir/hadoop/logs/*.*</span><br><span class="line">$ ssh root@192.168.31.130 rm -rf /opt/linuxsir/hadoop/logs/*.*</span><br><span class="line">$ ssh root@192.168.31.131 rm -rf /opt/linuxsir/hadoop/logs/*.*</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动Hadoop，包括HDFS和YARN。</span></span><br><span class="line">$ <span class="built_in">cd</span> /opt/linuxsir/hadoop/sbin</span><br><span class="line">$ ./stop-all.sh</span><br><span class="line">$ ./start-all.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查Hadoop是否正常启动。</span></span><br><span class="line">$ jps</span><br><span class="line">$ ssh root@192.168.31.130 jps</span><br><span class="line">$ ssh root@192.168.31.131 jps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开historyserver，可以通过在浏览器http://192.168.31.129:19888来查看。</span></span><br><span class="line">$ <span class="built_in">cd</span> /opt/linuxsir/hadoop/sbin</span><br><span class="line">$ mr-jobhistory-daemon.sh stop historyserver</span><br><span class="line">$ mr-jobhistory-daemon.sh start historyserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将file01和file02复制到Hadoop Distributed File System的input文件夹下，并查看。</span></span><br><span class="line">$ <span class="built_in">cd</span> /opt/linuxsir/hadoop/bin</span><br><span class="line">$ ./hdfs dfs -mkdir /input</span><br><span class="line">$ ./hdfs dfs -copyFromLocal /opt/linuxsir/map-reduce-inverted-index/input/file01 /input/file01</span><br><span class="line">$ ./hdfs dfs -copyFromLocal /opt/linuxsir/map-reduce-inverted-index/input/file02 /input</span><br><span class="line">$ ./hdfs dfs -cat /input/file01</span><br><span class="line">$ ./hdfs dfs -cat /input/file02</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除Hadoop Distributed File System的output文件夹</span></span><br><span class="line">$ ./hdfs dfs -rm /output/*</span><br><span class="line">$ ./hdfs dfs -rmdir /output</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行倒排索引程序invertedindex.jar。</span></span><br><span class="line">$ <span class="built_in">cd</span> /opt/linuxsir/map-reduce-inverted-index</span><br><span class="line">$ hadoop jar invertedindex.jar InvertedIndex /input /output</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看输出文件，检查程序是否运行成功。</span></span><br><span class="line">$ <span class="built_in">cd</span> /opt/linuxsir/hadoop/bin</span><br><span class="line">$ ./hdfs dfs -ls /output</span><br><span class="line">$ ./hdfs dfs -cat /output/part-r-00000</span><br></pre></td></tr></table></figure>
+<h4 id="3-实验结果"><a class="markdownIt-Anchor" href="#3-实验结果"></a> 3、实验结果</h4>
+<p>最后打开输出文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bye</span>		5722018411:1 </span><br><span class="line">goodbye	6722018415:1 </span><br><span class="line">hadoop	6722018415:2 </span><br><span class="line">hello	5722018411:1	6722018415:1 </span><br><span class="line">world	5722018411:2</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/10/12/Map-Reduce-Inverted-Index/output.png" alt="output.png"></p>
+<p>  通过上面的输出文件可以看出来，这里得到的就是前面所说的单词的倒排列表，记载了包含每个单词（关键词）的所有文件的ID，以及在文件中出现的次数。如，单词 <code>hello</code>，在ID为 <code>5722018411</code> 的文件中出现了1次，在ID为 <code>6722018415</code> 的文件中出现了1次。由此，可以看出，程序生成的倒排索引列表是正确的。</p>
+<h3 id="三-代码分析"><a class="markdownIt-Anchor" href="#三-代码分析"></a> 三、代码分析</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TokenizerMapper</span></span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">Mapper</span>&lt;<span class="title">Object</span>, <span class="title">Text</span>, <span class="title">Text</span>, <span class="title">Text</span>&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Text word = <span class="keyword">new</span> Text();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">map</span><span class="params">(Object key, Text value, Context context)</span> <span class="keyword">throws</span> IOException, InterruptedException </span>&#123;</span><br><span class="line">        String DocId = value.toString().substring(<span class="number">0</span>, value.toString().indexOf(<span class="string">"\t"</span>));</span><br><span class="line">        String value_raw =  value.toString().substring(value.toString().indexOf(<span class="string">"\t"</span>) + <span class="number">1</span>);</span><br><span class="line">        StringTokenizer itr = <span class="keyword">new</span> StringTokenizer(value_raw, <span class="string">" '-"</span>);</span><br><span class="line">        <span class="keyword">while</span> (itr.hasMoreTokens()) &#123;</span><br><span class="line">            word.set(itr.nextToken().replaceAll(<span class="string">"[^a-zA-Z]"</span>, <span class="string">""</span>).toLowerCase());</span><br><span class="line">            <span class="keyword">if</span>(word.toString() != <span class="string">""</span> &amp;&amp; !word.toString().isEmpty())&#123;</span><br><span class="line">                context.write(word, <span class="keyword">new</span> Text(DocId));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">IntSumReducer</span></span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">Reducer</span>&lt;<span class="title">Text</span>,<span class="title">Text</span>,<span class="title">Text</span>,<span class="title">Text</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reduce</span><span class="params">(Text key, Iterable&lt;Text&gt; values,Context context)</span> <span class="keyword">throws</span> IOException, InterruptedException </span>&#123;</span><br><span class="line">        HashMap&lt;String,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String,Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Text val : values) &#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(val.toString())) &#123;</span><br><span class="line">            map.put(val.toString(), map.get(val.toString()) + <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map.put(val.toString(), <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        StringBuilder docValueList = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span>(String docID : map.keySet())&#123;</span><br><span class="line">            docValueList.append(docID + <span class="string">":"</span> + map.get(docID) + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        context.write(key, <span class="keyword">new</span> Text(docValueList.toString()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  可以从代码中看出，代码中主要维护了两个类，一个是TokenizerMapper类，继承了Hadoop的Mapper类，主要负责将文件进行分词，并生成一条 &lt;Word，DocID&gt; 的映射；另一个是IntSumReducer，继承了Hadoop的Reducer类，根据前面Mapper生成的映射，将Word作为键值Key，统计并生成其在不同DocID下的出现次数。</p>
 
       
     </div>
@@ -590,9 +608,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/三体/" rel="tag"><i class="fa fa-tag"></i> 三体</a>
+            <a href="/tags/Hadoop/" rel="tag"><i class="fa fa-tag"></i> Hadoop</a>
           
-            <a href="/tags/读书报告/" rel="tag"><i class="fa fa-tag"></i> 读书报告</a>
+            <a href="/tags/分布式/" rel="tag"><i class="fa fa-tag"></i> 分布式</a>
+          
+            <a href="/tags/倒排索引/" rel="tag"><i class="fa fa-tag"></i> 倒排索引</a>
           
         </div>
       
@@ -605,15 +625,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/09/26/Hadoop/" rel="next" title="Hadoop">
+                <i class="fa fa-chevron-left"></i> Hadoop
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/27/AICAR/" rel="prev" title="AICAR">
-                AICAR <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -658,8 +678,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -806,6 +835,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-倒排索引"><span class="nav-text"> 一、倒排索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-应用场景"><span class="nav-text"> 1、应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-基本原理"><span class="nav-text"> 2、基本原理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-实验"><span class="nav-text"> 二、实验</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-实验环境"><span class="nav-text"> 1、实验环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-实验步骤"><span class="nav-text"> 2、实验步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-实验结果"><span class="nav-text"> 3、实验结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-代码分析"><span class="nav-text"> 三、代码分析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
