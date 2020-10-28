@@ -115,16 +115,18 @@
 
 
 
-  <meta name="description" content="江流宛转绕芳甸，月照花林皆似霰。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="江流洋">
-<meta property="og:url" content="http://www.jiangliuyang.top/archives/2020/09/index.html">
+  <meta name="description" content="一、背景   随着大数据时代的来临，数据的规模越来越大，TB级已经成为常态。对于海量的数据，如何对其进行有效的处理，是一个挑战。开源分布式数据库 HBase 数据库很好的解决了海量数据的存储问题，但是 HBase 只支持 Rowkey 作为索引检索数据，所以 HBase 在检索非 Rowkey 列的数据时，性能会很差。基于 HBase 这一特性，业界展开了对 HBase 二级索引的研究。业界对于">
+<meta name="keywords" content="HBase,Secondary-Index">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HBase-Secondary-Index-Support">
+<meta property="og:url" content="http://www.jiangliuyang.top/2020/10/20/HBase-Secondary-Index-Support/index.html">
 <meta property="og:site_name" content="江流洋">
-<meta property="og:description" content="江流宛转绕芳甸，月照花林皆似霰。">
+<meta property="og:description" content="一、背景   随着大数据时代的来临，数据的规模越来越大，TB级已经成为常态。对于海量的数据，如何对其进行有效的处理，是一个挑战。开源分布式数据库 HBase 数据库很好的解决了海量数据的存储问题，但是 HBase 只支持 Rowkey 作为索引检索数据，所以 HBase 在检索非 Rowkey 列的数据时，性能会很差。基于 HBase 这一特性，业界展开了对 HBase 二级索引的研究。业界对于">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-10-20T16:08:12.127Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="江流洋">
-<meta name="twitter:description" content="江流宛转绕芳甸，月照花林皆似霰。">
+<meta name="twitter:title" content="HBase-Secondary-Index-Support">
+<meta name="twitter:description" content="一、背景   随着大数据时代的来临，数据的规模越来越大，TB级已经成为常态。对于海量的数据，如何对其进行有效的处理，是一个挑战。开源分布式数据库 HBase 数据库很好的解决了海量数据的存储问题，但是 HBase 只支持 Rowkey 作为索引检索数据，所以 HBase 在检索非 Rowkey 列的数据时，性能会很差。基于 HBase 这一特性，业界展开了对 HBase 二级索引的研究。业界对于">
 
 
 
@@ -133,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="http://www.jiangliuyang.top/archives/2020/09/">
+  <link rel="canonical" href="http://www.jiangliuyang.top/2020/10/20/HBase-Secondary-Index-Support/">
 
 
 
@@ -143,7 +145,7 @@
   };
 </script>
 
-  <title>归档 | 江流洋</title>
+  <title>HBase-Secondary-Index-Support | 江流洋</title>
   
 
 
@@ -192,7 +194,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
    <!--  <a href="https://github.com/jaingmengmeng" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style> -->
@@ -305,7 +307,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -376,104 +378,347 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 9 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.jiangliuyang.top/2020/10/20/HBase-Secondary-Index-Support/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="江流洋">
+      <meta itemprop="description" content="江流宛转绕芳甸，月照花林皆似霰。">
+      <meta itemprop="image" content="/images/jiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江流洋">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/09/26/Hadoop/" itemprop="url">
-              
-                <span itemprop="name">Hadoop</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">HBase-Secondary-Index-Support
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-09-26T23:26:16+08:00" content="2020-09-26">
-          09-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2020-10-20 23:44:25" itemprop="dateCreated datePublished" datetime="2020-10-20T23:44:25+08:00">2020-10-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-10-21 00:08:12" itemprop="dateModified" datetime="2020-10-21T00:08:12+08:00">2020-10-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h3 id="一-背景"><a class="markdownIt-Anchor" href="#一-背景"></a> 一、背景</h3>
+<p>  随着大数据时代的来临，数据的规模越来越大，TB级已经成为常态。对于海量的数据，如何对其进行有效的处理，是一个挑战。开源分布式数据库 <code>HBase</code> 数据库很好的解决了海量数据的存储问题，但是 <code>HBase</code> 只支持 <code>Rowkey</code> 作为索引检索数据，所以 <code>HBase</code> 在检索非 <code>Rowkey</code> 列的数据时，性能会很差。基于 <code>HBase</code> 这一特性，业界展开了对 <code>HBase</code> 二级索引的研究。业界对于 <code>HBase</code> 二级索引的研究已经取得了不错的成果，目前主要实现的方案有 <code>ITHBase</code>，<code>IHBase</code>，<code>CCIndex</code>，华为二级索引和360二级索引等。</p>
+<a id="more"></a>
+<h3 id="二-问题"><a class="markdownIt-Anchor" href="#二-问题"></a> 二、问题</h3>
+<p>在 <code>HBase</code> 中实现二级索引与索引 <code>Join</code> 需要考虑三个目标：</p>
+<ol>
+<li>高性能的范围检索。</li>
+<li>数据的低冗余（存储所占的数据量）。</li>
+<li>数据的一致性。</li>
+</ol>
+<p>这三个目标之间的关系有如下的关系。</p>
+<ul>
+<li>性能与数据冗余，一致性是相互制约的关系。</li>
+<li>如果你实现了高性能地范围检索，必然需要靠冗余索引数据来提升性能，而数据冗余会导致更新数据时难以实现一致性，特别是分布式场景下。</li>
+<li>如果你不要求高效地范围检索，那么可以不考虑产生冗余数据，一致性问题也可以间接避免，毕竟share nothing是公认的最简单有效的解决方案。</li>
+</ul>
+<h3 id="三-原理"><a class="markdownIt-Anchor" href="#三-原理"></a> 三、原理</h3>
+<p>1、按索引建表</p>
+<p>  每一个索引建立一个表，然后依靠表的row key来实现范围检索。row key在HBase中是以B+ tree结构化有序存储的，所以scan起来会比较效率。单表以row key存储索引，column value存储id值或其他数据 ，这就是Hbase索引表的结构。</p>
+<p>2、单张表多个列族，索引基于列</p>
+<p>  Hbase提供了列族Column Family特性。列索引是将Column Family做为index，多个index值散落到Qualifier，多个column值依据version排列（CF, Qualifer, Version Hbase会保证有序，其中CF和Qualifier正序，Version倒序）。举个典型的例子，就是用户卖了很多商品，这些商品的标题title需要支持like %title%查询。传统基于RDMBS就是模糊查询，基于search engine就是分词+倒排表。在HBase中，模糊查询显然不满足我们的要求，接下来只能通过分词+倒排的方式来存储。取数据的时候，只需要根据用户id（row key）定位到一个row，然后根据分词定位到qualifier，再通过version的有序list，取top n条记录即可。不过大家可能会发现个问题，version list的总数量是需要scan全version list才能知道的，这里需要业务系统本身做一些改进。</p>
+<p>下表对比了表索引和列索引的优缺点：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>列索引</th>
+<th>表索引</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>检索性能</td>
+<td>检索数据需要走多次scan，第一次scan row key，第二次scan qualifier，第三次scan version。</td>
+<td>只需要走一次row key的scan即可。</td>
+</tr>
+<tr>
+<td>存储</td>
+<td>在没有组合索引时，存储较节省</td>
+<td>在没有组合索引时，存储较节省</td>
+</tr>
+<tr>
+<td>事务性</td>
+<td>容易保证</td>
+<td>保证事务性比较困难</td>
+</tr>
+<tr>
+<td>join</td>
+<td>性能较差，只有在建立组合条件Qualifier的时候性能会有所改善</td>
+<td>性能较差，只有在建立组合表索引的时候性能会有所改善</td>
+</tr>
+<tr>
+<td>额外的问题</td>
+<td>1，同一个row里每个qualifier的version是有大小限制的，不能超过Int的最大值。（别以为这个值很大，对于海量数据存储，上亿很平常）<br> 2，version的count总数需要额外做处理获取。 <br>3，单个row数据超过split大小时，会导致不能compaction或compaction内存吃紧，增加风险。</td>
+<td></td>
+</tr>
+<tr>
+<td>count,sum,avg,etc</td>
+<td>符合条件的结果集全表扫描</td>
+<td>符合条件的结果集全表扫描</td>
+</tr>
+</tbody>
+</table>
+<h3 id="四-分析"><a class="markdownIt-Anchor" href="#四-分析"></a> 四、分析</h3>
+<h5 id="1-ithbase"><a class="markdownIt-Anchor" href="#1-ithbase"></a> 1、ITHBase</h5>
+<p>  ITHBase（Indexed-Transanctional HBase)是业界已经实现的一种基于事务的二级索引项目，并且在Github上开源。该项目基于HBase0.20版本，版本比较陈旧，但是其思想还是值得借鉴的。</p>
+<p>  ITHBase索引具有如下特性：</p>
+<ol>
+<li>对主表进行插入删除操作，索引表会自动进行相应操作。</li>
+<li>对主表索引列进行修改操作，索引表会自动进行相应调整；若在主表中删除索引列，则索引表中索引不到（插入数据的规范性）</li>
+<li>可以直接对索引表插入删除，主表不会改变（看是否有相关的设置以保证不能对索引表进行单独操作）。</li>
+</ol>
+<h5 id="2-ihbase"><a class="markdownIt-Anchor" href="#2-ihbase"></a> 2、IHBase</h5>
+<p>  IHBase（Index HBase）也是业界已经实现的一种二级索引项目，并且在Gitthub上开源。该项目基于Hadoop0.20.2、HBase0.20.5和JDK1.6，IHBase非常类似ITHBase。IHBase同样从HBase源码级别进行了扩展，重新定义和实现了一些Server、Client端处理逻辑，所以，其具备强侵入性。遗憾的是，该项目在修复完HBase0.20.5版兼容Bug以后再也没有更新。</p>
+<p>  其核心思想是：当MemStrore满足缓冲（flush）到磁盘条件时，IHBase会进行拦截请求并为这个MemStrore的数据结构建索引，索引存放于表的另一个列族，不过只支持Region级别（类似于Coprocessor)。在执行Scan时，IHBase会结合索引列的标记来加速Scan。</p>
+<h5 id="3-ccindex"><a class="markdownIt-Anchor" href="#3-ccindex"></a> 3、CCIndex</h5>
+<p>  除了 ITHBase 和 IHBase 之外 , 中国科学院提出了另外一种二级索引方案 : 互补聚簇式索引 (complemental clustering index, 简称 CCIndex)。 前面的二级索引方案中 , 索引表中仅仅存放索引列与原来的 rowkey 信息， 在查询时 , 通过查询索引表得到 rowkey 以后 , 还需要根据 rowkey 到原来的表中去查找 , 然而由于得到的 rowkey 大都 是随机的 , 所以需要进行大量的随机读操作才能最终得到所需要的数据 , 效率相对比较低。 为了减少随机查询带 来的开销 ,CCIndex提出了一个新的方案 , 把数据的详细信息也存放在索引表中 , 这样在查询的时候就可以直接 在索引表中通过顺序扫描找到相应的数据 , 即把随机读变成了顺序读 , 可以大大缩短查询时间。 然而 , 把详细信 息存储在索引表中会造成存储空间的增加 , 为了尽可能地减少存储空间的开销 ,Zou 等人 把 HDFS文 件块备 份数设为 1, 这样就可以保证存储空间不会增加太多。</p>
+<p>  但是 , 备份数设为 1 之后， 数据的容错性又成了新的问题 , 为 了解决这一问题 , 他们又提出了新的容错方案, 通过创建 clustering check table, 再配合原有的索引表 , 能够实现快 速恢复。 同时 ,CCIndex 还提出了一种查询优化机制 , 用以支持多维查询。 该优化机制主要是利用 HBase 中的一些 元数据信息 (region-to-server information)来估算每个子查询结果的大小,根据查询结果来生成合适的查询计划,从而降低查询时间。CCIndex方案实现起来相对比较简单,但是也存在一些不足之处,如存储开销比较大,尤其是当索引列比较多的时候,空间开销会更大;索引更新代价比较高,会影响系统的吞吐量;索引创建以后,不能够动态增加或修改。</p>
+<h5 id="4-华为二级索引"><a class="markdownIt-Anchor" href="#4-华为二级索引"></a> 4、华为二级索引</h5>
+<p>  华为二级索引是华为高级技术经理Anoop Sam John在2012年的Hadoop与大数据技术大会上公布的。它采用纯java实现。它基于HBase0.94,采用了HBase的新特性Coprocessor来实现，它对HBase二级索引有一个创新性的修改，其改进点的重点在于减少由随机查询带来的大量网络开销。</p>
+<p>  华为二级索引的特点如下：</p>
+<ol>
+<li>索引和数据分别放在不同表里；</li>
+<li>所有的运算逻辑全都放在服务端；</li>
+<li>需要修改HBase源码，侵入性大；</li>
+<li>查询时无需指定，即可自动使用最优索引。</li>
+</ol>
+<h5 id="6-360二级索引"><a class="markdownIt-Anchor" href="#6-360二级索引"></a> 6、360二级索引</h5>
+<p>  在今年的Qcon北京会议上，360公司的系统部技术经理赵健博公布了360公司的HBase二级索引方案。这一方案的提出将比华为HBase二级索引更好的解决了Hbase的多维实时查询问题。360没有将主数据和索引分表储存，而是将它们存放在了同一张表里，通过给索引和主数据的RowKey添加特别设计的Hash前缀，实现了在Region切分时，索引能够跟随其主数据划归到同一Region上，即任意Region上的主数据其索引也必定驻留在同一Region上，这样我们就能把从索引抓取目标主数据的性能损失降低到最小。</p>
+<p>  360二级索引的特点如下：</p>
+<ol>
+<li>索引和Rowkey在同一个表里；</li>
+<li>支持多范围与操作优化；</li>
+<li>支持索引重建。</li>
+</ol>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HBase/" rel="tag"><i class="fa fa-tag"></i> HBase</a>
+          
+            <a href="/tags/Secondary-Index/" rel="tag"><i class="fa fa-tag"></i> Secondary-Index</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/10/18/jupyter-notebook-server/" rel="next" title="jupyter-notebook-server">
+                <i class="fa fa-chevron-left"></i> jupyter-notebook-server
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -494,8 +739,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -648,6 +902,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-背景"><span class="nav-text"> 一、背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-问题"><span class="nav-text"> 二、问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-原理"><span class="nav-text"> 三、原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-分析"><span class="nav-text"> 四、分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-ithbase"><span class="nav-text"> 1、ITHBase</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-ihbase"><span class="nav-text"> 2、IHBase</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-ccindex"><span class="nav-text"> 3、CCIndex</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-华为二级索引"><span class="nav-text"> 4、华为二级索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-360二级索引"><span class="nav-text"> 6、360二级索引</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -820,6 +1090,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
 
   
 
