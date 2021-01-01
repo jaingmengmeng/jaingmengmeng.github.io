@@ -118,7 +118,7 @@
   <meta name="description" content="江流宛转绕芳甸，月照花林皆似霰。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="江流洋">
-<meta property="og:url" content="http://www.jiangliuyang.top/tags/Hadoop/index.html">
+<meta property="og:url" content="http://www.jiangliuyang.top/tags/hadoop/index.html">
 <meta property="og:site_name" content="江流洋">
 <meta property="og:description" content="江流宛转绕芳甸，月照花林皆似霰。">
 <meta property="og:locale" content="zh-CN">
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://www.jiangliuyang.top/tags/Hadoop/">
+  <link rel="canonical" href="http://www.jiangliuyang.top/tags/hadoop/">
 
 
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>标签: Hadoop | 江流洋</title>
+  <title>标签: hadoop | 江流洋</title>
   
 
 
@@ -409,7 +409,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Hadoop<small>标签</small>
+        <h1>hadoop<small>标签</small>
         </h1>
       </div>
 
@@ -421,43 +421,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2020/10/12/Map-Reduce-Inverted-Index/" itemprop="url">
+            <a class="post-title-link" href="/2021/01/01/zookeeper-heartbeat/" itemprop="url">
               
-                <span itemprop="name">Map-Reduce Inverted Index</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-10-12T18:50:33+08:00" content="2020-10-12">
-          10-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/09/26/Hadoop/" itemprop="url">
-              
-                <span itemprop="name">Hadoop</span>
+                <span itemprop="name">zookeeper-heartbeat</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-09-26T23:26:16+08:00" content="2020-09-26">
-          09-26
+        <time class="post-time" itemprop="dateCreated" datetime="2021-01-01T22:43:11+08:00" content="2021-01-01">
+          01-01
         </time>
       </div>
 
@@ -516,7 +490,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -533,7 +507,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -572,7 +548,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -673,7 +655,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -687,7 +669,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">33k</span>
   
 
   
@@ -698,7 +680,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">30 分钟</span>
   
 </div>
 
@@ -1149,6 +1131,58 @@
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
       e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+  e.stopPropagation();
       if (isfetched === false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
       } else {
